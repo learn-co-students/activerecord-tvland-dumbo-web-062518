@@ -1,4 +1,5 @@
 require_relative 'spec_helper'
+require 'pry'
 
 describe "Actor" do
   let(:actor) {Actor.new}
@@ -24,6 +25,7 @@ describe "Actor" do
     khaleesi.save
 
     khaleesi.reload
+    # binding.pry
     expect(emilia.characters).to include(khaleesi)
     expect(khaleesi.actor).to eq(emilia)
   end
@@ -61,6 +63,7 @@ describe "Actor" do
   end
 
   it "can list all of its shows and characters" do
+    # bindi sng.pry
     # TODO create a list_roles method
     # TODO: build a method on actor that will return an array of
     # strings in the form "#{character_name} - #{show_name}"
